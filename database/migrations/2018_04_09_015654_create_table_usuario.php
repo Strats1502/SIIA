@@ -22,8 +22,6 @@ class CreateTableUsuario extends Migration
             $table->string('apellido_materno');
             $table->string('correo');
             $table->string('tipo');
-
-            $table->primary('id');
         });
     }
 

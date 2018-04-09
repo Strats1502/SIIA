@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCodigo extends Migration
+class CreateTableUnidad extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateTableCodigo extends Migration
      * @return void
      */
     public function up() {
-        Schema::create('codigo', function(Blueprint $table) {
+        Schema::create('unidad', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_maestro');
-            $table->string('fecha_inicial');
-            $table->string('fecha_final');
+            $table->integer('numero');
+            $table->integer('faltas');
+            $table->integer('reprobados');
+            $table->integer('desertores');
+            $table->integer('id_alumno_grupo');
         });
     }
 
@@ -25,7 +27,8 @@ class CreateTableCodigo extends Migration
      *
      * @return void
      */
-    public function down() {
-        Schema::drop('codigo');
+    public function down()
+    {
+        //
     }
 }

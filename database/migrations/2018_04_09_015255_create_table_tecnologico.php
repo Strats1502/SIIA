@@ -17,8 +17,6 @@ class CreateTableTecnologico extends Migration
             $table->string('nombre');
             $table->string('ruta_logo');
             $table->string('direccion');
-
-            $table->primary('id');
         });
     }
 

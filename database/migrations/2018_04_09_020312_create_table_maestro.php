@@ -15,8 +15,6 @@ class CreateTableMaestro extends Migration
         Schema::create('maestro', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('id_usuario');
-
-            $table->primary('id');
         });
     }
 

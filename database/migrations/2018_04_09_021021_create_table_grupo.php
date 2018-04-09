@@ -21,8 +21,7 @@ class CreateTableGrupo extends Migration
             $table->integer('id_horario');
             $table->integer('reprobados');
             $table->integer('desertores');
-
-            $table->primary('id');
+            $table->integer('semestre');
         });
     }
 

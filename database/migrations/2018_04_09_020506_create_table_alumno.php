@@ -12,6 +12,8 @@ class CreateTableAlumno extends Migration
      * @return void
      */
     public function up() {
+        Schema::defaultStringLength(191);
+
         Schema::create('alumno', function(Blueprint $table) {
             $table->string('matricula');
             $table->integer('id_usuario');

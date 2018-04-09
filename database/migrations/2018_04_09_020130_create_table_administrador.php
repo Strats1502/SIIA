@@ -15,8 +15,6 @@ class CreateTableAdministrador extends Migration
         Schema::create('administrador', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('id_usuario');
-
-            $table->primary('id');
         });
     }
 
