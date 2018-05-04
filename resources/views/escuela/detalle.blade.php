@@ -30,7 +30,7 @@
                 <span style="margin-bottom: 10px;" class="col s12">{{$campus->direccion}}</span>
                 @foreach($campus->carreras as $carrera)
                   <div>
-                    <a class="" href="{{url('escuelas/campus/'.$carrera->id)}}"><i class="material-icons">school</i> {{$carrera->nombre}}</a>
+                    <a class="" href="{{url('escuelas/carrera/'.$carrera->id)}}"><i class="material-icons">school</i> {{$carrera->nombre}}</a>
                   </div>
                 @endforeach
               </div>
@@ -42,14 +42,12 @@
       @endif
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
+        <a href="{{url('escuelas/campus/nuevo')}}" class="btn-floating btn-large red">
           <i class="large material-icons">add</i>
         </a>
       </div>
 
     </div>
   </div>
-            
-
 
 @endsection

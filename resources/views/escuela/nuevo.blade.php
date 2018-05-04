@@ -18,8 +18,7 @@
         @foreach($errors->all() as $error)
             <div class="red-text">{{$error}}</div>
         @endforeach
-        <form id="form-crear" method="post" action="{{url('/escuelas/crear')}}" class="col s12"
-              enctype="multipart/form-data">
+        <form id="form-crear" method="post" action="{{url('/escuelas/crear')}}" class="col s12" enctype="multipart/form-data">
             {{csrf_field()}}
 
             <div class="row">
@@ -36,10 +35,10 @@
 
             </div>
 
-                <div class="col s12">
+            <div class="col s12">
                 <input class="input-field btn right accent-color" type="submit" value="Registrar">
-</div>
             </div>
+            <!-- </div> -->
         </form>
     </div>
 

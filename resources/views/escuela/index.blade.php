@@ -22,12 +22,12 @@
       @if(count($escuelas) != 0 )
         @foreach($escuelas as $escuela)
         <div class="col s4">
-          <a href="{{url('escuelas/'.$escuela->id)}}">
+          <a href="{{url('escuelas/detalle/'.$escuela->id)}}">
           <div class="card">
             <div class="card-image">
               <img style="max-height: 400px;" src="{{$escuela->ruta_imagen}}">
-              <a href="{{url("escuelas/eliminar/$escuela->id")}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
-              <a href="{{url("escuelas/editar/$escuela->id")}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">edit</i></a>
+              <a href="{{url('escuelas/eliminar/$escuela->id')}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
+              <a href="{{url('escuelas/editar/$escuela->id')}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">edit</i></a>
             </div>
             <div class="card-content" style="background: #ecf0f1;">
               <span class="card-title">{{$escuela->nombre}}</span>

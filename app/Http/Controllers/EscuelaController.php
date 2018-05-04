@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Utils\FileUtils;
 use App\Escuela;
+use App\Carrera;
 
 class EscuelaController extends Controller {
     
@@ -79,4 +80,27 @@ class EscuelaController extends Controller {
     return redirect('escuelas');
   }
 
+  public function detalleCarrera($id){
+    $carrera = Carrera::find($id);
+
+    dd($carrera);
+  }
+
+  public function nuevoCampus(){
+    return view('escuela.nuevoCampus');
+  }
+
+  public function crearCampus(Request $request){
+    // dd($request->all());
+
+    $this->validate($request, [
+      'nombre' => 'required',
+      'direccion' => 'required'
+    ]);
+
+    $campus = Campus::create([
+      'nombre' => $request->nombre,
+      'direccion' => $request->direccion
+    ]);
+  }
 }
