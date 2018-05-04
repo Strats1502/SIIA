@@ -36,3 +36,11 @@ Route::group(['prefix' => 'escuelas'], function() {
     Route::get('eliminar/{id}', 'EscuelaController@eliminar');
     Route::get('{id}', 'EscuelaController@detalleEscuela');
 });
+
+Route::group(['prefix' => 'carreras'], function() {
+    Route::get('/', 'CarreraController@index');
+    Route::get('nuevo', 'CarreraController@nuevo');
+    Route::post('crear', 'CarreraController@crear');
+    Route::get('eliminar/{id}', 'CarreraController@eliminar');
+    Route::get('editar/{$id}', 'CarreraController@vistaEditar');
+});
