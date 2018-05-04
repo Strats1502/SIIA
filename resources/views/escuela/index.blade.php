@@ -25,7 +25,8 @@
           <a href=""><div class="card">
             <div class="card-image">
               <img style="max-height: 400px;" src="{{$escuela->ruta_imagen}}">
-              <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">add</i></a>
+              <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
+              <a href="{{url("escuelas/editar/$escuela->id")}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">edit</i></a>
             </div>
             <div class="card-content" style="background: #ecf0f1;">
               <span class="card-title">{{$escuela->nombre}}</span>
@@ -37,6 +38,12 @@
       @else
         <div class="error">Aun no hay escuelas registradas</div>
       @endif
+
+      <div class="fixed-action-btn action-btn-pos">
+        <a href="{{url('escuelas/nuevo')}}" class="btn-floating btn-large waves-effect waves-light btn accent-color">
+            <i class="material-icons">add</i>
+        </a>
+      </div>
 
     </div>
   </div>
