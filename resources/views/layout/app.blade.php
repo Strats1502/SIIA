@@ -73,6 +73,8 @@
 
                     <li><a href="{{url('escuelas')}}">Escuelas</a></li>
 
+                    <li><a href="{{url('materias')}}">Materias</a></li>
+
                     <li><a href="{{url('/')}}">Cerrar sesión</a></li>
                 </ul>
             </div>

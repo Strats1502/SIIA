@@ -39,3 +39,7 @@ Route::group(['prefix' => 'escuelas'], function() {
     Route::get('campus/nuevo', 'EscuelaController@nuevoCampus');
     Route::get('detalle/{id}', 'EscuelaController@detalleEscuela');
 });
+
+Route::group(['prefix' => 'materias'], function() {
+    Route::get('/', 'MateriaController@index');
+});
