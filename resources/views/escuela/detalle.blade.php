@@ -30,7 +30,7 @@
                 <span style="margin-bottom: 10px;" class="col s12">{{$campus->direccion}}</span>
                 @foreach($campus->carreras as $carrera)
                   <div>
-                    <a class="" href="{{url('escuelas/campus/'.$carrera->id)}}"><i class="material-icons">school</i> {{$carrera->nombre}}</a>
+                    <a class="" href="{{url('escuelas/carrera/'.$carrera->id)}}"><i class="material-icons">school</i> {{$carrera->nombre}}</a>
                   </div>
                 @endforeach
               </div>
@@ -49,7 +49,24 @@
 
     </div>
   </div>
-            
+  
+  <div id="modal_nuevo_campus" class="modal">
+    <div class="modal-content">
+      <h4>Crear nuevo campus</h4>
+      <form action="{{url('escuelas/campus/nuevo')}}">
+        {{csrf_field()}}
+        <input type="hidden" value="{{$escuela->id}}">
+        <div class="input-field">
+          <input id="nombre" type="text" name="nombre">
+          <label for="nombre">Nombre: </label>
+        </div>
+        <div class="input-field">
+          <input id="direccion" type="text" name="direccion">
+          <label for="direccion">Dirección: </label>
+        </div>
+      </form>
+    </div>
+  </div>
 
 
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Utils\FileUtils;
 use App\Escuela;
+use App\Carrera;
 
 class EscuelaController extends Controller {
     
@@ -78,5 +79,17 @@ class EscuelaController extends Controller {
     $escuela->delete();
     return redirect('escuelas');
   }
+
+  public function detalleCarrera($id){
+    $carrera = Carrera::find($id);
+
+    dd($carrera);
+  }
+
+  public function crearCampus(Request $request){
+    dd($request->all());
+  }
+  
+
 
 }
