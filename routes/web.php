@@ -33,4 +33,5 @@ Route::group(['prefix' => 'escuelas'], function() {
     Route::post('crear', 'EscuelaController@crear');
     Route::get('editar/{id}', 'EscuelaController@vistaEditar');
     Route::post('editar', 'EscuelaController@editar');
+    Route::get('eliminar/{id}', 'EscuelaController@eliminar');
 });

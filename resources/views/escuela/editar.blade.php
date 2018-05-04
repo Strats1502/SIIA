@@ -52,7 +52,7 @@
 
             {{csrf_field()}}
             <input type="hidden" name="input-deleted-docs" id="input-deleted-docs" value="[]">
-            <input type="hidden" name="id_escuela" value="{{$escuela->id}}">
+            <input type="hidden" name="id" value="{{$escuela->id}}">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="nombre" name="nombre" type="text" value="{{$escuela->nombre}}" class="validate">

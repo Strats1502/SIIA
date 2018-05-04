@@ -25,7 +25,7 @@
           <a href=""><div class="card">
             <div class="card-image">
               <img style="max-height: 400px;" src="{{$escuela->ruta_imagen}}">
-              <a class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
+              <a href="{{url("escuelas/eliminar/$escuela->id")}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
               <a href="{{url("escuelas/editar/$escuela->id")}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">edit</i></a>
             </div>
             <div class="card-content" style="background: #ecf0f1;">

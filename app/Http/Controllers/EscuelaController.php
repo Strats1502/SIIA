@@ -51,13 +51,21 @@ class EscuelaController extends Controller {
 
     $id = $request->input('id');
     $nombre = $request->input('nombre');
-    $ruta_imagen = $request->input('ruta_imagen');
+    $imagen = $request->file('imagen');
+    $ruta_imagen = null;
+    if($imagen != null) $ruta_imagen = FileUtils::guardar($imagen, 'storage/convocatorias/', 'escuela_');
 
     $escuela = Escuela::find($id);
     $escuela->nombre = $nombre;
-    $escuela->ruta_imagen = $ruta_imagen;
+    if ($ruta_imagen != null) $escuela->ruta_imagen = $ruta_imagen;
     $escuela->save();
 
+    return redirect('escuelas');
+  }
+
+  public function eliminar($id) {
+    $escuela = Escuela::find($id);
+    $escuela->delete();
     return redirect('escuelas');
   }
 
