@@ -22,7 +22,7 @@
       @if(count($escuelas) != 0 )
         @foreach($escuelas as $escuela)
         <div class="col s4">
-          <a href="{{url('escuelas/'.$escuela->id)}}">
+          <a href="{{url('escuelas/detalle/'.$escuela->id)}}">
           <div class="card">
             <div class="card-image">
               <img style="max-height: 400px;" src="{{$escuela->ruta_imagen}}">

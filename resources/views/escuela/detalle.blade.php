@@ -42,31 +42,12 @@
       @endif
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
+        <a href="{{url('escuelas/campus/nuevo')}}" class="btn-floating btn-large red">
           <i class="large material-icons">add</i>
         </a>
       </div>
 
     </div>
   </div>
-  
-  <div id="modal_nuevo_campus" class="modal">
-    <div class="modal-content">
-      <h4>Crear nuevo campus</h4>
-      <form action="{{url('escuelas/campus/nuevo')}}">
-        {{csrf_field()}}
-        <input type="hidden" value="{{$escuela->id}}">
-        <div class="input-field">
-          <input id="nombre" type="text" name="nombre">
-          <label for="nombre">Nombre: </label>
-        </div>
-        <div class="input-field">
-          <input id="direccion" type="text" name="direccion">
-          <label for="direccion">Dirección: </label>
-        </div>
-      </form>
-    </div>
-  </div>
-
 
 @endsection

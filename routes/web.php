@@ -35,6 +35,7 @@ Route::group(['prefix' => 'escuelas'], function() {
     Route::post('editar', 'EscuelaController@editar');
     Route::get('eliminar/{id}', 'EscuelaController@eliminar');
     Route::get('carrera/{id}', 'EscuelaController@detalleCarrera');
-    Route::get('{id}', 'EscuelaController@detalleEscuela');
-    Route::get('campus/crear', 'EscuelaController@crearCampus');
+    Route::post('campus/crear', 'EscuelaController@crearCampus');
+    Route::get('campus/nuevo', 'EscuelaController@nuevoCampus');
+    Route::get('detalle/{id}', 'EscuelaController@detalleEscuela');
 });

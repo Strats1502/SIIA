@@ -86,10 +86,21 @@ class EscuelaController extends Controller {
     dd($carrera);
   }
 
-  public function crearCampus(Request $request){
-    dd($request->all());
+  public function nuevoCampus(){
+    return view('escuela.nuevoCampus');
   }
-  
 
+  public function crearCampus(Request $request){
+    // dd($request->all());
 
+    $this->validate($request, [
+      'nombre' => 'required',
+      'direccion' => 'required'
+    ]);
+
+    $campus = Campus::create([
+      'nombre' => $request->nombre,
+      'direccion' => $request->direccion
+    ]);
+  }
 }
