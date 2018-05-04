@@ -15,4 +15,9 @@ class Escuela extends Model {
     ];
 
     public $timestamps = false;
+
+    public function campus()
+    {
+        return $this->hasMany('App\Campus', 'id_escuela');
+    }
 }

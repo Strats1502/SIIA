@@ -71,6 +71,8 @@
 
                     <li><a href="{{url('usuario')}}">Usuarios</a></li>
 
+                    <li><a href="{{url('escuelas')}}">Escuelas</a></li>
+
                     <li><a href="{{url('/')}}">Cerrar sesión</a></li>
                 </ul>
             </div>

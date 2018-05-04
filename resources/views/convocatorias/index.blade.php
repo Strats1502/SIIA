@@ -32,7 +32,7 @@
         <h5>Convocatorias</h5>
     </div>
     <div class="row">
-    
+
     @foreach($convocatorias as $convocatoria)
         <div class="col s12 m6 l4 anuncio">
             <a href="{{url("/convocatorias/editar/$convocatoria->id_convocatoria")}}">
