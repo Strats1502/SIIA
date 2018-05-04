@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Unidad extends Model {
-    protected $primaryKey = 'id';
-
-    protected $table = 'unidad';
+class RegistroGrupo extends Model {
+    protected $table = 'registro_grupo';
 
     protected $fillable = [
-        'numero',
-        'faltas',
+        'id_grupo',
         'reprobados',
         'desertores',
-        'id_alumno_grupo'
+        'total_alumnos',
+        'aprobados'
     ];
 
     public $timestamps = false;

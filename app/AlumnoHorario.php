@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Horario extends Model {
-    protected $table = 'horario';
+class AlumnoHorario extends Model {
+    protected $table = 'alumno_horario';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'hora_inicio',
-        'hora_fin'
+        'id_semestre',
+        'version'
     ];
 
     public $timestamps = false;

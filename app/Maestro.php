@@ -5,12 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Maestro extends Model {
-    protected $primaryKey = 'id';
-
     protected $table = 'maestro';
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
-        'id_usuario'
+        'id_datos_usuario',
+        'administrador'
     ];
 
     public $timestamps = false;

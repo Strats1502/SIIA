@@ -10,12 +10,12 @@ class Alumno extends Model {
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id_usuario',
-        'carrera',
-        'semestre'
+        'id_datos_usuario',
+        'matricula',
+        'id_carrera',
+        'semestre',
+        'id_turno'
     ];
 
     public $timestamps = false;
-
-    public $incrementing = false;
 }

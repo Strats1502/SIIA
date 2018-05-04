@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tecnologico extends Model {
-    protected $primaryKey = 'id';
+class TipoCurso extends Model {
+    protected $table = 'tipo_curso';
 
-    protected $table = 'tecnologico';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'nombre',
-        'ruta_logo',
-        'direccion'
+        'abreviatura'
     ];
 
     public $timestamps = false;

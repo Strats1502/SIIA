@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Administrador extends Model {
+class Turno extends Model {
+    protected $table = 'turno';
+
     protected $primaryKey = 'id';
 
-    protected $table = 'administrador';
-
     protected $fillable = [
-        'id_usuario'
+        'nombre'
     ];
 
     public $timestamps = false;

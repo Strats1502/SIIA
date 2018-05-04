@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Codigo extends Model {
+class MaestroHorario extends Model {
+    protected $table = 'maestro_horario';
+
     protected $primaryKey = 'id';
 
-    protected $table = 'codigo';
-
     protected $fillable = [
+        'id_semestre',
         'id_maestro',
-        'fecha_inicial',
-        'fecha_final'
+        'version'
     ];
 
     public $timestamps = false;
