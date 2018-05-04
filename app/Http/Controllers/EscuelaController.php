@@ -17,7 +17,6 @@ class EscuelaController extends Controller {
     ));
   }
 
-<<<<<<< HEAD
   public function detalleEscuela($id) {
     $escuela = Escuela::find($id);
     
@@ -28,7 +27,6 @@ class EscuelaController extends Controller {
     ));
   }
 
-=======
   public function nuevo(Request $request) {
     return view('escuela.nuevo');
   }
@@ -80,6 +78,5 @@ class EscuelaController extends Controller {
     $escuela->delete();
     return redirect('escuelas');
   }
->>>>>>> 5fce030c6bdccb402b05a58e2c2b4d040ee8b594
 
 }
