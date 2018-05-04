@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/bienvenida', 'BienvenidaController@index');
+
+//Usuarios
+Route::post('usuario/login', 'UsuarioController@login');
+
+Route::get('usuario/', 'UsuarioController@index');
+
+Route::get('usuario/nuevo', 'UsuarioController@nuevo');
+
+Route::post('usuario/crear', 'UsuarioController@crear');
