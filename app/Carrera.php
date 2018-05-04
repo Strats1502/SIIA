@@ -10,7 +10,6 @@ class Carrera extends Model {
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id_campus',
         'nombre',
         'ruta_imagen',
         'abreviatura',
