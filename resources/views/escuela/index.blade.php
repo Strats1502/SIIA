@@ -22,7 +22,8 @@
       @if(count($escuelas) != 0 )
         @foreach($escuelas as $escuela)
         <div class="col s4">
-          <a href="{{url('escuelas/'.$escuela->id)}}"><div class="card">
+          <a href="{{url('escuelas/'.$escuela->id)}}">
+          <div class="card">
             <div class="card-image">
               <img style="max-height: 400px;" src="{{$escuela->ruta_imagen}}">
               <a href="{{url('escuelas/eliminar/$escuela->id')}}" class="btn-floating halfway-fab waves-effect waves-light red right"><i class="material-icons">delete</i></a>
@@ -39,14 +40,17 @@
         <div class="error">Aun no hay escuelas registradas</div>
       @endif
 
-      <!-- <div class="fixed-action-btn action-btn-pos">
-        <a href="#modal_nuevo_campus" class="btn-floating btn-large waves-effect waves-light btn accent-color modal-trigger">
-            <i class="material-icons">add</i>
-        </a>
-      </div> -->
+      
 
     </div>
   </div>
+
+  
+  <div class="fixed-action-btn action-btn-pos">
+        <a href="{{url('escuelas/nuevo')}}" class="btn-floating btn-large waves-effect waves-light btn accent-color">
+            <i class="material-icons">add</i>
+        </a>
+      </div>
             
 
 
