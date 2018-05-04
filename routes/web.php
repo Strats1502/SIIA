@@ -29,10 +29,10 @@ Route::post('usuario/crear', 'UsuarioController@crear');
 // Route::group(['prefix' => 'escuela', 'middleware'=>'auth'], function() {
 Route::group(['prefix' => 'escuelas'], function() {
     Route::get('/', 'EscuelaController@index');
-    Route::get('/{id}', 'EscuelaController@detalleEscuela');
     Route::get('nuevo', 'EscuelaController@nuevo');
     Route::post('crear', 'EscuelaController@crear');
     Route::get('editar/{id}', 'EscuelaController@vistaEditar');
     Route::post('editar', 'EscuelaController@editar');
     Route::get('eliminar/{id}', 'EscuelaController@eliminar');
+    Route::get('{id}', 'EscuelaController@detalleEscuela');
 });
