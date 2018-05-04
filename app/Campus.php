@@ -16,4 +16,9 @@ class Campus extends Model {
     ];
 
     public $timestamps = false;
+
+    public function carreras()
+    {
+        return $this->belongsToMany('App\Carrera', 'campus_carrera', 'id_carrera', 'id_campus');
+    }
 }

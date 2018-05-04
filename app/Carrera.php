@@ -11,7 +11,7 @@ class Carrera extends Model {
 
     protected $fillable = [
         'id_campus',
-        'nombres',
+        'nombre',
         'ruta_imagen',
         'abreviatura',
         'total_creditos',
@@ -22,4 +22,9 @@ class Carrera extends Model {
     ];
 
     public $timestamps = false;
+
+    public function reticulas()
+    {
+        return $this->hasMany('App\Reticula', 'id_carrera');
+    }
 }

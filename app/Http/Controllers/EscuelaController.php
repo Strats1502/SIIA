@@ -16,4 +16,15 @@ class EscuelaController extends Controller {
     ));
   }
 
+  public function detalleEscuela($id) {
+    $escuela = Escuela::find($id);
+    
+    // dd($escuela->campus[0]->carreras);
+    
+    return view('escuela.detalle', array(
+      'escuela' => $escuela
+    ));
+  }
+
+
 }

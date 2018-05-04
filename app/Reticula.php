@@ -16,4 +16,9 @@ class Reticula extends Model {
     ];
 
     public $timestamps = false;
+
+    public function materias()
+    {
+        return $this->belongsToMany('App\Materia', 'reticula_materia', 'id_materia', 'id_reticula');
+    }
 }

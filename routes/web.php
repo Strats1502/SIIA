@@ -29,4 +29,5 @@ Route::post('usuario/crear', 'UsuarioController@crear');
 // Route::group(['prefix' => 'escuela', 'middleware'=>'auth'], function() {
 Route::group(['prefix' => 'escuelas'], function() {
     Route::get('/', 'EscuelaController@index');
+    Route::get('/{id}', 'EscuelaController@detalleEscuela');
 });
