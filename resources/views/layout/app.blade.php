@@ -54,30 +54,48 @@
                     close: 'Cerrar'
                 });
                 moment.locale('es');
+    
+                var url = $('#_url').val()+'/getMenuItems';
+                console.log(url);
+                $.ajax({
+                    headers: { 'X-CSRF-Token' : $('#token').val() },
+                    url: url,
+                    type: 'post',
+                    success: function(msg){
+                        for (let i = 0; i < msg.escuelas.length; i++) {
+                            var menuItem = '<li><a href="'+$('#_url').val()+'/escuelas/detalle/'+msg.escuelas[i].id+'">'+msg.escuelas[i].nombre+'</a></li>';
+                            $('#escuelasMenuItem').append(menuItem);
+                        }
+                        console.log($('#escuelasMenuItem'));
+                    }
+                });
             });
         </script>
         @yield('head')
     </head>
     <body style="background: #f1f1f1" id="body">
     <input type="hidden" id="_url" value="{{ url('/') }}">
-        <!--Barra de navegación-->
-        <nav>
-            <div class="nav-wrapper primary-color">
-                <a href="#" class="brand-logo" style="padding-left: 2.5%;">@yield('cabecera')</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                <!--  <li><a href="{{url('reportes')}}">Reportes</a></li>-->
-                    <li><a href="{{url('bienvenida')}}">Inicio</a></li>
+    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+    <!--Barra de navegación-->
+    <nav>
+        <div class="nav-wrapper primary-color">
+            <a href="#" class="brand-logo" style="padding-left: 2.5%;">@yield('cabecera')</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul  id="nav" class="right hide-on-med-and-down">
+                <li><a href="{{url('bienvenida')}}">Inicio</a></li>
+                
+                <li><a href="{{url('usuario')}}">Usuarios</a></li>
+                
+                <li>
+                    <a class="dropbtn" href="{{url('escuelas')}}">Escuelas</a>
+                    <ul id="escuelasMenuItem">
+                            
+                        </ul>
+                    </li>
 
-                    <li><a href="{{url('usuario')}}">Usuarios</a></li>
-
-                    <li><a href="{{url('escuelas')}}">Escuelas</a></li>
-
-<<<<<<< HEAD
                     <li><a href="{{url('carreras')}}">Carreras</a></li>
-=======
+
                     <li><a href="{{url('materias')}}">Materias</a></li>
->>>>>>> c7ef05c1bddd8bbb1bb0ace53aaf248e09de05c8
 
                     <li><a href="{{url('/')}}">Cerrar sesión</a></li>
                 </ul>

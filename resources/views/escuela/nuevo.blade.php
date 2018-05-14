@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="input-field col s12 ">
-                    <input  id="nombre" name="nombre" type="text" maxlength="50">
+                    <input  id="nombre" name="nombre" type="text" maxlength="70">
                     <label for="nombre">Nombre</label>
                 </div>
 
