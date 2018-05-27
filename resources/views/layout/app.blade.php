@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="{{url('/js/jquery-1.12.3.js')}}"></script>
-        <script type="text/javascript" src="{{url('/js/lolliclock.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/materialize.js')}}"></script>
+        <script type="text/javascript" src="{{url('/js/lolliclock.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/ion.rangeSlider.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/moment.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/moment-with-locales.js')}}"></script>
@@ -54,56 +54,48 @@
                     close: 'Cerrar'
                 });
                 moment.locale('es');
-    
-                var url = $('#_url').val()+'/getMenuItems';
-                console.log(url);
-                $.ajax({
-                    headers: { 'X-CSRF-Token' : $('#token').val() },
-                    url: url,
-                    type: 'post',
-                    success: function(msg){
-                        for (let i = 0; i < msg.escuelas.length; i++) {
-                            var menuItem = '<li><a href="'+$('#_url').val()+'/escuelas/detalle/'+msg.escuelas[i].id+'">'+msg.escuelas[i].nombre+'</a></li>';
-                            $('#escuelasMenuItem').append(menuItem);
-                        }
-                        console.log($('#escuelasMenuItem'));
-                    }
-                });
             });
         </script>
         @yield('head')
     </head>
-    <body style="background: #f1f1f1" id="body">
+    <body id="body">
     <input type="hidden" id="_url" value="{{ url('/') }}">
     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
     <!--Barra de navegación-->
-    <nav>
-        <div class="nav-wrapper primary-color">
-            <a href="#" class="brand-logo" style="padding-left: 2.5%;">@yield('cabecera')</a>
+    <nav style="height:100px; color:#black;">
+        <div class="nav-wrapper white-color" style="height:100px;">
+            <a href="{{url('inicio')}}" class="brand-logo" style="padding-left: 2.5%;">
+                <img src="{{$escuela->ruta_imagen}}" style="vertical-align: middle; display:inline-block; height:95px;" alt="Inicio">
+                <div style="display:inline-block; line-height: 100px; color: #4d4d4d;">{{$escuela->nombre}}</div>
+            </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul  id="nav" class="right hide-on-med-and-down">
-                <li><a href="{{url('bienvenida')}}">Inicio</a></li>
-                
-                <li><a href="{{url('usuario')}}">Usuarios</a></li>
-                
-                <li>
-                    <a class="dropbtn" href="{{url('escuelas')}}">Escuelas</a>
-                    <ul id="escuelasMenuItem">
-                            
-                        </ul>
-                    </li>
+                <li><a class="menuItem" href="{{url('escuela')}}">Escuela</a></li>
 
-                    <li><a href="{{url('carreras')}}">Carreras</a></li>
+                <li><a class="menuItem menuSelected" href="{{url('usuarios')}}">Usuarios</a></li>
 
-                    <li><a href="{{url('materias')}}">Materias</a></li>
+                <li><a class="menuItem" href="{{url('grupos')}}">Grupos</a></li>
 
-                    <li><a href="{{url('/')}}">Cerrar sesión</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container" id="container" style="background:white;  padding:30px; margin-top:50px;">
-
-            @yield('contenedor')
+                <li><a style="margin:0;cursor:pointer;">Usuario nombre <i style="display:inline-block;vertical-align: middle;" class="material-icons">arrow_drop_down</i></a></li>
+                {{--<li><p>{{$usuario['nombre']}}</p></li>--}}
+            </ul>
         </div>
+    </nav>
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <nav id="submenu" class="submenu col l2 m3 s4" style=" box-shadow:none;background:#fff;color:#ddd;margin-top:30px;">
+                <ul>
+                    @foreach ($submenuItems as $submenuItem)
+                        <li><a class="{{$submenuItem['selected']?'submenuSelected':''}}" href="{{$submenuItem['link']}}">{{$submenuItem['nombre']}}</a></li>
+                    @endforeach
+                </ul>
+            </nav>
+            <div class="container col l10 m9 s8" id="container" style="background:white; border-left: #9d9d9d 1px solid; padding:0 30px; margin-top:30px;">
+                @yield('contenedor')
+            </div>
+        </div>
+    </div>
+    @yield('modalNuevo')
+    @yield('modalEditar')
     </body>
 </html>

@@ -11,20 +11,17 @@ class EscuelaController extends Controller {
     
 
   public function index() {
-    $escuelas = Escuela::all();
+    $escuela = Escuela::all()->first();
+    $submenuItems = [
+      ['nombre'=>'Escuela','link'=>url(''), 'selected'=>true],
+      ['nombre'=>'Carreras','link'=>url(''), 'selected'=>false],
+      ['nombre'=>'Materias','link'=>url(''), 'selected'=>false]
+    ];
 
-    return view('escuela.index', array(
-      'escuelas' => $escuelas
-    ));
-  }
-
-  public function detalleEscuela($id) {
-    $escuela = Escuela::find($id);
-    
-    // dd($escuela->campus[0]->carreras);
-    
+    // dd($submenuItems);
     return view('escuela.detalle', array(
-      'escuela' => $escuela
+      'escuela' => $escuela,
+      'submenuItems' => $submenuItems
     ));
   }
 
@@ -82,6 +79,12 @@ class EscuelaController extends Controller {
 
   public function detalleCarrera($id){
     $carrera = Carrera::find($id);
+    $escuela = Escuela::all()->first();
+    $submenuItems = [
+      ['nombre'=>'Escuela','link'=>url(''), 'selected'=>true],
+      ['nombre'=>'Carreras','link'=>url(''), 'selected'=>false],
+      ['nombre'=>'Materias','link'=>url(''), 'selected'=>false]
+    ];
 
     dd($carrera);
   }

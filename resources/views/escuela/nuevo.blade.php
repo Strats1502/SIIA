@@ -1,17 +1,9 @@
 @extends('layout.app')
 
-@section('title')
-    Nueva escuela
-@endsection
 
-
-@section('head')
-    <script type="text/javascript" src="{{url('/js/jquery.validate.js')}}"></script>
-    <script src="{{url('/js/usuarios/nuevo.js')}}"></script>
-@endsection
-
-@section('contenedor')
-    <div class="row">
+@section('modalNuevo')
+    <p>HOLA</p>
+    {{--<div class="row">
         <h2>Nueva escuela</h2>
     </div>
     <div class="row">
@@ -40,6 +32,5 @@
             </div>
             <!-- </div> -->
         </form>
-    </div>
-
+    </div>--}}
 @endsection
